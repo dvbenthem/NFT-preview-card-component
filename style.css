@@ -1,0 +1,205 @@
+/* FONT STYLES */
+@font-face {
+  font-family: "Outfit";
+  src: url(../../Fonts/Outfit/Outfit-VariableFont_wght.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url(../../Fonts/Outfit/Outfit-VariableFont_wght.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url(../../Fonts/Outfit/Outfit-VariableFont_wght.ttf);
+  font-weight: 700;
+}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* CUSTOM PROPERTIES */
+:root{
+  /* primary colors */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  /* neutral colors */
+  --very-dark-blue-mainbg: hsl(217, 54%, 11%);
+  --very-dark-blue-cardbg: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* GLOBAL STYLES */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* console.log of css */
+  /* outline: 2px solid tomato !important; */
+  /* background-color: rgba(255, 0, 0, 0.05) !important; */
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--very-dark-blue-mainbg);
+  font-weight: 400;
+}
+p{
+  font-size: 1.8rem;
+}
+img{
+  max-width: 100%;
+  display: block;
+}
+.card{
+  background-color: var(--very-dark-blue-cardbg);
+  width: 32.5rem;
+  border-radius: 10px;
+  padding: 2.4rem;
+  box-shadow: 0 20px 15px 20px hsla(0, 0%, 0%, .05);
+}
+.image-container{
+  position: relative;
+}
+.equilibrium-img{
+  border-radius: 10px;
+}
+.overlay{
+  position: absolute;
+  background-color: var(--cyan);
+  inset: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 50;
+  transition: all 250ms;
+}
+.icon-view-img{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  opacity: 0;
+
+  transition: all 250ms;
+}
+.image-container:hover .overlay{
+  opacity: .4;
+}
+.image-container:hover .icon-view-img{
+  opacity: 1;
+  pointer-events: none;
+}
+.overlay img{
+  position: absolute;
+  isolation: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.card-title{
+  margin: 2rem 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+}
+.card-title a:link,
+.card-title a:active{
+  color: var(--white);
+  text-decoration: none;
+  /* font-weight: 400; */
+
+  transition: all 250ms;
+}
+.card-title a:hover{
+  color: var(--cyan);
+}
+.card-description{
+  color: var(--soft-blue);
+  margin-bottom: 2.4rem;
+  font-weight: 300;
+  font-size: initial;
+  line-height: 1.5;
+}
+.nft-info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.amount{
+  color: var(--cyan);
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: .6rem;
+}
+.amount img{
+  width: 10px;
+}
+.days-left{
+  color: var(--soft-blue);
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .6rem;
+}
+.days-left span{
+  font-size: 1.4rem;
+}
+.days-left img{
+  height: 15px;
+  aspect-ratio: 1 / 1;
+}
+.author{
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--very-dark-blue-line);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+.author img{
+  width: 11%;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1.6rem;
+}
+.author h3{
+  color: var(--soft-blue);
+  font-size: initial;
+  font-weight: 100;
+}
+.author h3 span{
+  color: var(--white);
+}
+.author a{
+  color: var(--white);
+  text-decoration: none;
+  transition: all 250ms;
+}
+.author a:hover{
+  color: var(--cyan);
+}
+
+/* SCREEN SIZE 375px */
+@media( max-width: 375px) {
+  .card {
+      width: 30rem;
+      /* margin: auto; */
+  }
+}
+
+/* FOOTER LIKE  */
+.attribution { color: var(--soft-blue); font-size: 11px; text-align: center; margin-top: 1rem; }
+.attribution a { color: hsl(178, 100%, 50%); text-decoration: none; border-bottom: 2px solid transparent; }
+.attribution a:hover{
+  border-bottom: 2px solid hsl(178, 100%, 50%);
+}
